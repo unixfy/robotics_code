@@ -1,10 +1,7 @@
 
 task main()
 {
-// chickfileric
-// I'm getting really full dude
-// David nu y
-	while(1 == 1){
+  while(1 == 1){
     motor[leftMotor]  = (vexRT[Ch2] + vexRT[Ch1])/2;  // (y + x)/2
     motor[rightMotor] = (vexRT[Ch2] - vexRT[Ch1])/2;  // (y - x)/2
   }
@@ -16,5 +13,3 @@ task main()
 	}
 
 }
-//WARNING: CONVICTED CRIMINAL KNOWN AS DAVID IS OUT TO GET YOUR CHAIR
-//KEEP YOUR CHAIRS LOCKED UP IN A BULLETPROOF SAFE

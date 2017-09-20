@@ -8,7 +8,7 @@
 
 #include "Vex_Competition_Includes.c"
 
-// lol pre auton stuff
+// Pre-Autonomous
 void pre_auton(){
 	// Set bStopTasksBetweenModes to false if you want to keep user created tasks
 	// running between Autonomous and Driver controlled modes. You will need to
