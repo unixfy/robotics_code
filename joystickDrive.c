@@ -1,5 +1,5 @@
-#pragma config(Motor,  port2,           rightDrive,    tmotorVex393_MC29, openLoop, driveRight)
-#pragma config(Motor,  port3,           leftDrive,     tmotorVex393_MC29, openLoop, driveLeft)
+#pragma config(Motor,  port2,           rightDrive,    tmotorVex393_MC29, openLoop, reversed, driveRight)
+#pragma config(Motor,  port3,           leftDrive,     tmotorVex393_MC29, openLoop, reversed, driveLeft)
 #pragma config(Motor,  port4,           twistyMotor,   tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port5,           notWorking,    tmotorNone, openLoop)
 #pragma config(Motor,  port6,           notWorking,    tmotorNone, openLoop)
@@ -35,15 +35,25 @@ task main()
   while(1 == 1)
   {
   	// Attaches right and left drive to left/right vertical joysticks on primary controller
-    motor[rightDrive] = vexRT[Ch2];
-    motor[leftDrive]  = vexRT[Ch3];
+    motor[rightDrive] = vexRT[Ch3];
+    motor[leftDrive]  = vexRT[Ch2];
     tankControl(vexRT[Ch2],vexRT[Ch3], 127);
 
     // Attaches twisty motor (allows horizontal movement of the claw) to the right horizontal joystick on the partner controller
-   	motor[twistyMotor] = vexRT[Ch4Xmtr2];
+   	motor[twistyMotor] = vexRT[Ch1Xmtr2];
 
    	// Attaches arm motor (vertical movement of claw) to the right vertical joystick of the partner controller
-    motor[armMotor] = vexRT[Ch2Xmtr2];
+    //motor[armMotor] = vexRT[Ch2Xmtr2];
+    if(vexRT[Btn5UXmtr2] == 1)
+    {
+    	motor[armMotor] = 99;
+    }
+    else if(vexRT[Btn5DXmtr2] == 1) {
+    	motor[armMotor] = -99;
+    }
+    else {
+    	motor[armMotor] = 0;
+    }
 
     // Attatches claw motor to the right up/down buttons on the partner controller
     if(vexRT[Btn6UXmtr2] == 1)
