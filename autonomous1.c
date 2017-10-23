@@ -32,19 +32,33 @@
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 task main()
 {
-	wait1Msec(2000);						// Robot waits for 2000 milliseconds before executing program
+	//wait1Msec(2000);						// Robot waits for 2000 milliseconds before executing program
 
-	// Move forward at full power for 3 seconds
-	motor[rightDrive] = 127;		  // Motor on port2 is run at full (127) power forward
-	motor[leftDrive]  = 127;		  // Motor on port3 is run at full (127) power forward
-	wait1Msec(2000);             // Robot runs previous code for 1000 milliseconds before moving on
+	//// Move forward at full power for 3 seconds
+	//motor[rightDrive] = 127;		  // Motor on port2 is run at full (127) power forward
+	//motor[leftDrive]  = 127;		  // Motor on port3 is run at full (127) power forward
+	//wait1Msec(2000);             // Robot runs previous code for 1000 milliseconds before moving on
+	//motor[rightDrive] = 127;		//robot turns right .5 sec
+	//motor[leftDrive] = -127;
+	//wait1Msec(500);
+	//motor[rightDrive] = 127;		//robot moves forward for 2 seconds
+	//motor[leftDrive] = 127;
+	//wait1Msec(2000);
+
+	motor[rightDrive] = -50;
+	motor[leftDrive] =  50;
+	wait1Msec(500);
+	motor[rightDrive]  = 127;
+	motor[leftDrive] = 127;
+	wait1Msec(1500);
 	motor[rightDrive] = 127;
 	motor[leftDrive] = -127;
 	wait1Msec(500);
 	motor[rightDrive] = 127;
 	motor[leftDrive] = 127;
-	wait1Msec(2000);
+	wait1Msec(1500);
+
 
 }
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
