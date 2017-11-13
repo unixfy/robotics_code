@@ -104,7 +104,6 @@ task usercontrol()
 		// Attaches right and left drive to left/right vertical joysticks on primary controller
 		motor[rightDrive] = vexRT[Ch3];
 		motor[leftDrive]  = vexRT[Ch2];
-		tankControl(vexRT[Ch2],vexRT[Ch3], 127);
 
 		// Attaches twisty motor (allows horizontal movement of the claw) to the right horizontal joystick on the partner controller
 		motor[twistyMotor] = vexRT[Ch1Xmtr2];
