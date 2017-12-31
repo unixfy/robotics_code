@@ -32,3 +32,19 @@ This repository is distributed under the open-source MPL-2.0 license. The LICENS
 
 - Warranty
 
+---
+
+# Files in the Repository
+
+- **autonomous1.c**: Undeveloped autonomous program that does not use IMEs
+
+- **compTemplate.c**: Old competition template - not used
+
+- **currentCompTemplate.c**: Our current competition template which is used in competition right now
+
+- **integratedencoder.c**: A testing program for IMEs
+
+- **joystickDrive.c**: Usercontrol portion of comp template - not really developed
+
+- **testBenchCompTemplate[*].c**: Various versions of the "integratedencoder.c" inside a comp template
+
