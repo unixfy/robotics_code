@@ -91,6 +91,56 @@ task autonomous()
 	//motor[leftDrive] = 127;
 	//motor[rightDrive] = 127;
 
+///////////////////////////////////////////////////////////////////////////////////////
+
+	//// Reset Motors
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
+
+	//// Drive forward for 2 seconds then stop
+	//motor[rightDrive] = 127;
+	//motor[leftDrive] = 127;
+	//wait1Msec(3500);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
+
+	//// Pick up goal lift
+	//motor[goalLift] = 70;
+	//wait1Msec(1050);
+	//motor[goalLift] = 0;
+
+	//// Back up slightly
+	//motor[rightDrive] = -50;
+	//motor[leftDrive] = -50;
+	//wait1Msec(1500);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
+
+	//// Make a U-turn
+	//motor[rightDrive] = -127;
+	//motor[leftDrive] = 127;
+	//wait1Msec(975);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
+
+	//// Drive into scoring zone
+	//motor[rightDrive] = 127;
+	//motor[leftDrive] = 127;
+	//wait1Msec(2000);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
+
+	//// Drop mobile goal
+	//motor[goalLift] = -70;
+	//wait1Msec(1050);
+	//motor[goalLift] = 0;
+
+	//// Back up
+	//motor[rightDrive] = -127;
+	//motor[leftDrive] = -127;
+	//wait1Msec(1000);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
 }
 
