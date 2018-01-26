@@ -1,3 +1,5 @@
+#pragma config(Motor,  port2,           coneGrabber,   tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port4,           coneLift,      tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port6,           goalLift,      tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port8,           rightDrive,    tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port9,           leftDrive,     tmotorVex393_MC29, openLoop)
@@ -91,7 +93,7 @@ task autonomous()
 	//motor[leftDrive] = 127;
 	//motor[rightDrive] = 127;
 
-///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
 
 	// Reset Motors
 	motor[rightDrive] = 0;
@@ -156,17 +158,39 @@ task usercontrol()
 		motor[leftDrive]  = vexRT[Ch3];
 
 
-		// Mobile Cone
-		if(vexRT[Btn6U]){
+		// Mobile Goal
+		if(vexRT[Btn6UXmtr2]){
 			motor[goalLift] = 70;
 			//wait1Msec(950);
 		}
-		else if(vexRT[Btn6D]){
+		else if(vexRT[Btn6DXmtr2]){
 			motor[goalLift] = -70;
 			//wait1Msec(1000);
 		}
 		else {
 			motor[goalLift] = 0;
+		}
+
+		// Yello Cone
+		if(vexRT[Btn5UXmtr2]){
+			motor[coneLift] = 80;
+		}
+		else if(vexRT[Btn5DXmtr2]){
+			motor[coneLift] = -80;
+		}
+		else {
+			motor[coneLift] = 0;
+		}
+
+		// Yello Cone Grabber
+		if(vexRT[Btn7UXmtr2]){
+			motor[coneGrabber] = 127;
+		}
+		else if(vexRT[Btn7DXmtr2]){
+			motor[coneGrabber] = -127;
+		}
+		else {
+			motor[coneGrabber] = 0;
 		}
 
 	}
