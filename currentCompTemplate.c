@@ -1,4 +1,4 @@
-#pragma config(Motor,  port2,           coneGrabber,   tmotorVex393_MC29, openLoop)
+#pragma config(Motor,  port3,           coneGrabber,   tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port4,           coneLift,      tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port6,           goalLift,      tmotorVex393_MC29, openLoop)
 #pragma config(Motor,  port8,           rightDrive,    tmotorVex393_MC29, openLoop)
@@ -95,54 +95,54 @@ task autonomous()
 
 	///////////////////////////////////////////////////////////////////////////////////////
 
-	// Reset Motors
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Reset Motors
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
-	// Drive forward for 2 seconds then stop
-	motor[rightDrive] = 127;
-	motor[leftDrive] = 127;
-	wait1Msec(3500);
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Drive forward for 2 seconds then stop
+	//motor[rightDrive] = 127;
+	//motor[leftDrive] = 127;
+	//wait1Msec(3500);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
-	// Pick up goal lift
-	motor[goalLift] = 70;
-	wait1Msec(1050);
-	motor[goalLift] = 0;
+	//// Pick up goal lift
+	//motor[goalLift] = 70;
+	//wait1Msec(1050);
+	//motor[goalLift] = 0;
 
-	// Back up slightly
-	motor[rightDrive] = -50;
-	motor[leftDrive] = -50;
-	wait1Msec(1500);
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Back up slightly
+	//motor[rightDrive] = -50;
+	//motor[leftDrive] = -50;
+	//wait1Msec(1500);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
-	// Make a U-turn
-	motor[rightDrive] = 127;
-	motor[leftDrive] = -127;
-	wait1Msec(1075);
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Make a U-turn
+	//motor[rightDrive] = 127;
+	//motor[leftDrive] = -127;
+	//wait1Msec(1075);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
-	// Drive into scoring zone
-	motor[rightDrive] = 127;
-	motor[leftDrive] = 127;
-	wait1Msec(3000);
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Drive into scoring zone
+	//motor[rightDrive] = 127;
+	//motor[leftDrive] = 127;
+	//wait1Msec(3000);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
-	// Drop mobile goal
-	motor[goalLift] = -70;
-	wait1Msec(950);
-	motor[goalLift] = 0;
+	//// Drop mobile goal
+	//motor[goalLift] = -70;
+	//wait1Msec(950);
+	//motor[goalLift] = 0;
 
-	// Back up
-	motor[rightDrive] = -127;
-	motor[leftDrive] = -127;
-	wait1Msec(1000);
-	motor[rightDrive] = 0;
-	motor[leftDrive] = 0;
+	//// Back up
+	//motor[rightDrive] = -127;
+	//motor[leftDrive] = -127;
+	//wait1Msec(1000);
+	//motor[rightDrive] = 0;
+	//motor[leftDrive] = 0;
 
 }
 
@@ -159,11 +159,11 @@ task usercontrol()
 
 
 		// Mobile Goal
-		if(vexRT[Btn6UXmtr2]){
+		if(vexRT[Btn6U]){
 			motor[goalLift] = 70;
 			//wait1Msec(950);
 		}
-		else if(vexRT[Btn6DXmtr2]){
+		else if(vexRT[Btn6D]){
 			motor[goalLift] = -70;
 			//wait1Msec(1000);
 		}
@@ -173,20 +173,20 @@ task usercontrol()
 
 		// Yello Cone
 		if(vexRT[Btn5UXmtr2]){
-			motor[coneLift] = 80;
+			motor[coneLift] = 55;
 		}
 		else if(vexRT[Btn5DXmtr2]){
-			motor[coneLift] = -80;
+			motor[coneLift] = -55;
 		}
 		else {
 			motor[coneLift] = 0;
 		}
 
 		// Yello Cone Grabber
-		if(vexRT[Btn7UXmtr2]){
+		if(vexRT[Btn6UXmtr2]){
 			motor[coneGrabber] = 127;
 		}
-		else if(vexRT[Btn7DXmtr2]){
+		else if(vexRT[Btn6DXmtr2]){
 			motor[coneGrabber] = -127;
 		}
 		else {
